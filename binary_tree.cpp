@@ -76,15 +76,16 @@ void in_Order(tree *p){
 }
 void post_Order(tree *p){
     if(p!=nullptr){
-        in_Order(p->left);
-        in_Order(p->right);
+        post_Order(p->left);
+        post_Order(p->right);
         cout<<p->data<<"  ";
     }
 }
 void pre_Order(tree *p){
     if(p!=nullptr){
         cout<<p->data<<"  ";
-        in_Order(p->left);
-        in_Order(p->right);
+        pre_Order(p->left);
+        pre_Order(p->right);
     }
 }
+
