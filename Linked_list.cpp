@@ -7,29 +7,33 @@ struct node{
     int data;
 };
 
-node * head = new node;
-node * temp = new node;
+node * head , *temp;
 
 
 void create(){
-    node * n = new node;
-    n->next=nullptr;
-    cout<<"Enter the data :";
-    cin>>n->data;
+    temp = new node;
+    temp->next=nullptr;
+    cout<<"Enter data :";
+    cin>>temp->data;
 
     if(head==nullptr){
-        head=n;
-        temp=n;
+        head=temp;
     }
     else{
-        temp->next=n;
-        temp=n;
+        node *p;
+        p=head;
+        while (p->next!=nullptr)
+        {
+            p=p->next;
+        }
+        p->next=temp;
+
     }
 }
 
 void display(){
-    
-    node * ptr = new node;
+
+    node * ptr = head;
     while(ptr!=nullptr){
         cout<<ptr->data<<endl;
         ptr=ptr->next;
