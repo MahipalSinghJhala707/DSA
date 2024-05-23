@@ -7,28 +7,19 @@ struct node{
     int data;
 };
 
+
+int count=0;
 node * head , *temp;
 void insertFront();
+void insertEnd();
+void insertMiddle();
 
 void create(){
+    count++;
     temp = new node;
     temp->next=nullptr;
     cout<<"Enter data :";
     cin>>temp->data;
-
-    if(head==nullptr){
-        head=temp;
-    }
-    else{
-        node *p;
-        p=head;
-        while (p->next!=nullptr)
-        {
-            p=p->next;
-        }
-        p->next=temp;
-
-    }
 }
 
 void display(){
@@ -41,14 +32,61 @@ void display(){
 }
 
 int main(){
-    create();
-    create();
-    create();
-    create();
-    display();
+    insertMiddle();
+    insertMiddle();
+    insertMiddle();
+    insertMiddle();
 
+    display();
 }
 
 void insertFront(){
-    
+    create();
+    if(head==nullptr){
+        head=temp;
+    }
+    else{
+        temp->next=head;
+        head=temp;
+    }
+}
+
+void insertEnd(){
+    create();
+    if(head==nullptr){
+        head=temp;
+    }
+    else{
+        node *ptr = head;
+        while(ptr->next!=nullptr){
+            ptr=ptr->next;
+        }
+        ptr->next=temp;
+    }
+
+}
+
+void insertMiddle(){
+    cout<<"Enter the position to insert the new element";
+    int i;
+    cin>>i;
+    if (i==1){
+        insertFront();
+        return;
+    }
+    else if(i==count+1){
+        insertEnd();
+        }
+    else if(i>1 && i<count){
+        node * ptr = head;
+        while (i--)
+        {
+            ptr=ptr->next;
+        }
+        temp->next=ptr->next;
+        ptr->next=temp;
+    }
+    else {
+        cout<<"Enter a valid position";
+    }
 }
