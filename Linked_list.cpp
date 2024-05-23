@@ -8,7 +8,7 @@ struct node{
 };
 
 node * head , *temp;
-
+void insertFront();
 
 void create(){
     temp = new node;
@@ -47,4 +47,8 @@ int main(){
     create();
     display();
 
+}
+
+void insertFront(){
+    
 }
