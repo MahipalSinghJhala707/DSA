@@ -32,10 +32,7 @@ void display(){
 }
 
 int main(){
-    insertMiddle();
-    insertMiddle();
-    insertMiddle();
-    insertMiddle();
+   
 
     display();
 }
