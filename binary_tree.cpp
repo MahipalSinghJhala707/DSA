@@ -41,27 +41,35 @@ void create(){
 }
 int main(){
     int x;
-    // do
-    // {
-    //     cout<<"Enter 1 to create tree";
-    //     cin>>x;
+    do
+    {
+        cout<<endl<<"Enter 1 to create tree"<<endl;
+        cout<<"Enter 2 to show inorder"<<endl;
+        cout<<"Enter 3 to show preorder"<<endl;
+        cout<<"Enter 4 to show postorder"<<endl;
+        cout<<"Enter 1 to exit"<<endl;
 
-    // } while (x!=-1);
-    create();
-    create();
-    create();
-    create();
-    create();
-    create();
-    create();
-    create();
-    create();
-    in_Order(root);
-    cout<<endl;
-    pre_Order(root);
-    cout<<endl;
-    post_Order(root);
-    cout<<endl;
+
+        cin>>x;
+        switch (x)
+        {
+        case 1:
+            create();
+            break;
+        case 2:
+            in_Order(root);
+            break;
+        case 3:
+            pre_Order(root);
+            break;
+        case 4:
+            post_Order(root);
+            break;
+        default:
+            break;
+        }
+
+    } while (x!=-1);
     return 0;
 
 }
