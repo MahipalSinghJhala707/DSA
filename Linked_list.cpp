@@ -32,9 +32,34 @@ void display(){
 }
 
 int main(){
-   
+    int x;
+    do
+    {
+        cout<<"Enter 1 to insert at front"<<endl;
+        cout<<"Enter 2 to insert at middle"<<endl;
+        cout<<"Enter 3 to insert at end"<<endl;
+        cout<<"Enter 4 to display"<<endl;
+        cin>>x;
+        switch (x)
+        {
+        case 1:
+            insertFront();
+            break;
+        case 2:
+            insertMiddle();
+            break;
+        case 3:
+            insertEnd();
+            break;
+        case 4:
+            display();
+            break;
+        default:
+            break;
+        }
+        
 
-    display();
+    } while (x!=-1);
 }
 
 void insertFront(){
